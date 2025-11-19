@@ -24,10 +24,15 @@ module alu_tb;
     reg [3:0] a,b,op;
     wire [3:0] out;
     wire cout;
-    blinky test_unit(a,b,op,out,cout);
+    alu test_unit(a,b,op,out,cout);
     initial begin
         a=4'd1;
         b=4'd4;
         op = 4'h0;
+        #10;
+        a=4'd4;
+        #10
+        a=4'd2;
+        op=4'h2;
     end
 endmodule
