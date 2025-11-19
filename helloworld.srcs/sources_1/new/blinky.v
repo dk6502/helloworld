@@ -21,10 +21,10 @@
 
 
 module blinky(
-    input sw1,
-    input sw2,
-    output LED
+    input [3:0] a, b, op,
+    output [3:0] LED,
+    output cLED
     );
 
-    assign LED = sw1 & sw2;
-endmodule
+    alu alu1(a,b,op,LED,CLED);
+ endmodule
